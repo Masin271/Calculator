@@ -1,2 +1,2 @@
 # Calculator
-If I do this then I'm a programmer
+If I do this then I can become a programmer.
