@@ -43,8 +43,17 @@ equal.addEventListener("click", () => {
     secondNumber *= firstNumber;
     firstNumber = secondNumber;
   } else if (operator === "/") {
-    secondNumber /= firstNumber;
+    if (Number(firstNumber) != 0) {
+      secondNumber /= firstNumber;
     firstNumber = secondNumber;
+    }
+    else {
+      calDisplay.textContent = "0";
+      firstNumber = "";
+      secondNumber = "0";
+      operator = ""; 
+    }
+    
   }
 
   calDisplay.textContent = secondNumber;
