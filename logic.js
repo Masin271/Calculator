@@ -6,6 +6,7 @@ let numbers = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
 let clear = document.querySelector(".clear");
 let equal = document.querySelector(".equal");
+let float = document.querySelector(".float");
 calDisplay.textContent = "0";
 numbers.forEach((number) =>
   number.addEventListener("click", (e) => {
@@ -15,6 +16,11 @@ numbers.forEach((number) =>
     calDisplay.textContent = firstNumber;
   })
 );
+float.addEventListener("click", () => {
+  if (!firstNumber.includes(".")) {
+    firstNumber += ".";
+  }
+});
 operators.forEach((operateVar) =>
   operateVar.addEventListener("click", (e) => {
     operator = e.target.textContent;
@@ -45,15 +51,13 @@ equal.addEventListener("click", () => {
   } else if (operator === "/") {
     if (Number(firstNumber) != 0) {
       secondNumber /= firstNumber;
-    firstNumber = secondNumber;
-    }
-    else {
+      firstNumber = secondNumber;
+    } else {
       calDisplay.textContent = "0";
       firstNumber = "";
       secondNumber = "0";
-      operator = ""; 
+      operator = "";
     }
-    
   }
 
   calDisplay.textContent = secondNumber;
