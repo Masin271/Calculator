@@ -38,6 +38,7 @@ body {
   text-wrap: wrap;
   font-size: 30px;
   width: 450px;
+  direction: rtl;
 }
 
 .row {
