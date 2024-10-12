@@ -20,6 +20,7 @@ numbers.forEach((number) =>
 float.addEventListener("click", () => {
   if (!firstNumber.includes(".")) {
     firstNumber += ".";
+    calDisplay.textContent += ".";
   }
 });
 operators.forEach((operateVar) =>
