@@ -32,12 +32,13 @@ operators.forEach((operateVar) =>
 );
 back.addEventListener("click", () => {
   firstNumber = firstNumber.slice(0, -1);
-  if (calDisplay.textContent.includes(operator)) {
-    calDisplay.textContent = operator + " " + firstNumber;
-  }
-  else {
+  if (calDisplay.textContent.length > 1) {
     calDisplay.textContent = firstNumber;
   }
+    
+    else if (calDisplay.textContent.length == 1) {
+      calDisplay.textContent = "0";
+    }
 })
 clear.addEventListener("click", () => {
   calDisplay.textContent = "0";
