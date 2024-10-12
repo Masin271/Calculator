@@ -7,6 +7,7 @@ let operators = document.querySelectorAll(".operator");
 let clear = document.querySelector(".clear");
 let equal = document.querySelector(".equal");
 let float = document.querySelector(".float");
+let back = document.querySelector(".back");
 calDisplay.textContent = "0";
 numbers.forEach((number) =>
   number.addEventListener("click", (e) => {
@@ -29,6 +30,15 @@ operators.forEach((operateVar) =>
     calDisplay.textContent = operator + " " + firstNumber;
   })
 );
+back.addEventListener("click", () => {
+  firstNumber = firstNumber.slice(0, -1);
+  if (calDisplay.textContent.includes(operator)) {
+    calDisplay.textContent = operator + " " + firstNumber;
+  }
+  else {
+    calDisplay.textContent = firstNumber;
+  }
+})
 clear.addEventListener("click", () => {
   calDisplay.textContent = "0";
   firstNumber = "";
