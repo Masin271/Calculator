@@ -5,7 +5,7 @@ let calDisplay = document.querySelector(".display");
 let numbers = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
 let clear = document.querySelector(".clear");
-let equal = document.querySelector(".equal");
+let equal = document.querySelector("#equal");
 let float = document.querySelector(".float");
 let back = document.querySelector(".back");
 calDisplay.textContent = "0";
@@ -37,7 +37,7 @@ back.addEventListener("click", () => {
     calDisplay.textContent = firstNumber;
   }
     
-    else if (calDisplay.textContent.length == 1) {
+    else if (calDisplay.textContent.length <= 1) {
       calDisplay.textContent = "0";
     }
 })
